@@ -75,7 +75,7 @@ or curl request:
 ```
 curl --header "Content-Type: application/json" \
   --request POST \
-  --data '{"message":"some test message","ttl":5}' \
+  --data '{"message":"this is a test message","ttl":5}' \
   http://localhost:7777/api/v1/message
 ```
 
