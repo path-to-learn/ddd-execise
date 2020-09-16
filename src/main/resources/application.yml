@@ -1,0 +1,5 @@
+server:
+  port: 7777
+
+message:
+  baseAccessLink: http://localhost:${server.port}
