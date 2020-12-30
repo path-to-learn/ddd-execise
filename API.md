@@ -1,4 +1,4 @@
-# MSF Messaging Exercise #
+# Messaging Exercise Using DDD #
 
 ## 1. Overview ##
 

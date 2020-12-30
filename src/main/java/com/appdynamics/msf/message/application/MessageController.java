@@ -25,8 +25,13 @@ public class MessageController {
     @PostMapping("/message")
     ResponseEntity<?> createMessage(@RequestBody CreateMessageCommand createMessageCommand) {
         //TODO: implement this to create the message
+        if (createMessageCommand.getTtl() == null)
+                createMessageCommand.setTtl(30);
 
-        CreateMessageResponseDto responseDto = new CreateMessageResponseDto(messageBaseAccessLink + "/api/v1/message/blah", new Date());
+        //CreateMessageResponseDto responseDto = new CreateMessageResponseDto(messageBaseAccessLink + "/api/v1/message/blah", new Date());
+
+        CreateMessageResponseDto responseDto = messageApplicationService.createMessage(createMessageCommand);
+
         return ResponseEntity.created(UriComponentsBuilder.fromHttpUrl(responseDto.getAccessLink()).build().toUri())
                 .body(responseDto);
     }

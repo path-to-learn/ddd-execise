@@ -22,7 +22,7 @@ public class MsfMessageRepositoryInMemoryImpl implements MsfMessageRepository {
     @Override
     public void save(MsfMessage originalMsg) {
         MsfMessage msfMessage = new MsfMessage(originalMsg.getId(),
-                originalMsg.getMessage());
+                originalMsg.getMessage(), originalMsg.getExpiryDate());
 
         msfMessageRepo.put(msfMessage.getId(), msfMessage);
     }
